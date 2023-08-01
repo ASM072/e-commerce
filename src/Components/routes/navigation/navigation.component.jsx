@@ -9,7 +9,6 @@ const Navigation = () =>
         <Fragment>
             <div className="navigation">
                 <Link className="logoBox" to="/">
-                    
                     <Logo />
                 </Link>
                 <div className="signIN">
