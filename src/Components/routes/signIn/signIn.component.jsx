@@ -1,7 +1,7 @@
 // eslint-disable-next-line
-import { auth, signInWithGooglePopup, userDocFromAuth } from "../../../utility/firebase/firebase.utility";
-
-import { useState, useSyncExternalStore } from "react";
+import { auth, signInWithGooglePopup, userDocFromAuth } from "../../../utility/firebase/firebase.utility";  
+import { authUserWithEmailAndPassword, userSignIn } from "../../../utility/firebase/firebase.utility";
+import { useState } from "react";
 
 
 const SignIn = () =>
@@ -21,6 +21,25 @@ const SignIn = () =>
         setInputField( { ...inputFields, [ name ]: value } );
     }
 
+    const resetInputFields = () =>
+    {
+        setInputField( defaultInputField );
+    };
+
+    const signInHandler = async ( event ) =>
+    {
+        event.preventDefault();
+        try
+        {
+            const { user } = await userSignIn( email, password );
+            resetInputFields();
+            console.log( user );
+            alert( "Success!" );
+        } catch ( error )
+        {
+            alert( "Unable to Sign In" + error );
+        }
+    }
     const logGoogleUser = async () =>
     {
         const { user } = await signInWithGooglePopup();
@@ -31,7 +50,7 @@ const SignIn = () =>
         <div className="signIn-container">
             <h2>Already have an account? Sign In</h2>
 
-            <form onSubmit={()=>{}}>
+            <form onSubmit={signInHandler}>
                                 
                     <label>Email</label>
                     <input type="email"
