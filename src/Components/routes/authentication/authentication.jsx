@@ -1,13 +1,13 @@
 
 import SignUp from "../../signUp/SignUp";
-import Signin from "../../signIn/signIn.component";
+import SignIn from "../../signIn/signIn.component";
 import './authentication.scss';
 
 const Authentication = () =>
 {
-    return (
+    return ( 
         <div className="authenticationContainer">
-            <Signin />
+            <SignIn />
             <SignUp />
         </div>
     );

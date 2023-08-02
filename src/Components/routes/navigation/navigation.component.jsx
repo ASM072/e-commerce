@@ -5,14 +5,14 @@ import './navigation.style.scss'
 
 const Navigation = () =>
 {
-    return (
+    return ( 
         <Fragment>
             <div className="navigation">
                 <Link className="logoBox" to="/">
                     <Logo />
                 </Link>
                 <div className="signIN">
-                <Link className="signIn-link" to="/signIn">
+                    <Link className="signIn-link" to="/authentication">
                     Sign In   
                 </Link>
                 </div>

@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import { auth, signInWithGooglePopup, userDocFromAuth } from "../../utility/firebase/firebase.utility";  
-import { authUserWithEmailAndPassword, userSignIn } from "../../utility/firebase/firebase.utility";
+import { authUserWithEmailAndPassword, userSignIn, signInWithEmailandPassword } from "../../utility/firebase/firebase.utility";
 import { useState } from "react";
 import FormInput from "../formInput/formInput";
 import SignUp from "../signUp/SignUp";
@@ -49,7 +49,7 @@ const SignIn = () =>
 
     return (
         <div className="ob">
-            <SignUp/>
+            {/* <SignUp/> */}
             <h2>Already have an account? Sign In</h2>
 
             <form onSubmit={signInHandler}>

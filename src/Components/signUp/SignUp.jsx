@@ -4,8 +4,6 @@ import { authUserWithEmailAndPassword } from "../../utility/firebase/firebase.ut
 import './signUp.scss';
 
 
-
-
 const SignUp = () =>
 {
     const defaultInputField = {
