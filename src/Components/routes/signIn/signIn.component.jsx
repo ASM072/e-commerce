@@ -2,7 +2,7 @@
 import { auth, signInWithGooglePopup, userDocFromAuth } from "../../../utility/firebase/firebase.utility";  
 import { authUserWithEmailAndPassword, userSignIn } from "../../../utility/firebase/firebase.utility";
 import { useState } from "react";
-
+import FormInput from "../../formInput/formInput";
 
 const SignIn = () =>
 {
@@ -51,21 +51,22 @@ const SignIn = () =>
             <h2>Already have an account? Sign In</h2>
 
             <form onSubmit={signInHandler}>
-                                
-                    <label>Email</label>
-                    <input type="email"
+                    
+                <FormInput
+                    label="Email"
+                    type="email"
                     required
                     onChange={handleChange}
                     name="email"
                     value={ email }/>
-                <label>
-                password
-                </label>
-                    <input type="password"
+                
+                <FormInput
+                    type="password"
+                    label="Password"
                     required
                     onChange={handleChange}
                     name="password"
-                value={ password }/>
+                    value={ password }/>
 
                 <div className="buttons-container">
                     <button type="submit">Sign In</button>
