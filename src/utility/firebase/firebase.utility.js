@@ -1,21 +1,16 @@
 // eslint-disable-next-line
 
 import { initializeApp } from 'firebase/app';
-import
-    {
-        getAuth,
-        signInWithPopup,
-        GoogleAuthProvider,
-    } from 'firebase/auth';
+import{ getAuth, signInWithPopup, signInWithRedirect, GoogleAuthProvider, } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-    authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-    projectId: 'crwn-clothing-db-98d4d',
-    storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-    messagingSenderId: '626766232035',
-    appId: '1:626766232035:web:506621582dab103a4d08d6',
+    apiKey: "AIzaSyC0VdbGHlxjHXBALe1imkrFl40e8SzkGiM",
+    authDomain: "ontime-072.firebaseapp.com",
+    projectId: "ontime-072",
+    storageBucket: "ontime-072.appspot.com",
+    messagingSenderId: "774650616050",
+    appId: "1:774650616050:web:d6278b57e823b8450c986b"
 };
 
 const firebaseApp = initializeApp( firebaseConfig );
@@ -28,6 +23,7 @@ provider.setCustomParameters( {
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup( auth, provider );
+export const signInWithGoogleRedirect = () => signInWithRedirect( auth, provider );
 
 export const db = getFirestore();
 
