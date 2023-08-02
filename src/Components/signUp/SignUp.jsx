@@ -1,5 +1,7 @@
 import FormInput from "../formInput/formInput";
 import { useState } from "react";
+import { authUserWithEmailAndPassword } from "../../utility/firebase/firebase.utility";
+import './signUp.scss';
 
 
 
@@ -29,8 +31,32 @@ const SignUp = () =>
         setInputField( { ...inputFileds, [ name ]: value } );
     };
 
+    const submitHandler = async ( event ) =>
+    {
+        event.preventDefault();
+        if ( password !== confirmPassword )
+        {
+            alert( "Passwords do not match" );
+            return;
+        }
+        try
+        {
+            const { user } = await authUserWithEmailAndPassword(
+                email,
+                password
+            );
+
+            await authUserWithEmailAndPassword( user, { displayName } );
+            resetInputFields();
+            console.log( user );
+        } catch ( error )
+        {
+            alert( "Error in creating user" + error );
+        }
+    };
+
     return (
-        <div className="sigUpContainer">
+        <div className="signUpContainer">
             <h2>Don't have an account</h2>
             <span>SIGN UP USING EMAIL AND PASSWORD</span>
 
@@ -72,3 +98,5 @@ const SignUp = () =>
         </div>
     );
 };
+
+export default SignUp;

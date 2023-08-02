@@ -3,6 +3,7 @@ import { auth, signInWithGooglePopup, userDocFromAuth } from "../../utility/fire
 import { authUserWithEmailAndPassword, userSignIn } from "../../utility/firebase/firebase.utility";
 import { useState } from "react";
 import FormInput from "../formInput/formInput";
+import SignUp from "../signUp/SignUp";
 
 const SignIn = () =>
 {
@@ -48,6 +49,7 @@ const SignIn = () =>
 
     return (
         <div className="ob">
+            <SignUp/>
             <h2>Already have an account? Sign In</h2>
 
             <form onSubmit={signInHandler}>
