@@ -1,10 +1,34 @@
 import FormInput from "../formInput/formInput";
+import { useState } from "react";
 
 
 
 
 const SignUp = () =>
 {
+    const defaultInputField = {
+        displayName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    };
+
+    const [ inputFileds, setInputField ] = useState( defaultInputField );
+    const { displayName, email, password, confirmPassword } = inputFileds;
+
+    console.log( inputFileds );
+
+    const resetInputFields = () =>
+    {
+        setInputField( defaultInputField );
+    };
+
+    const changeHandler = ( event ) =>
+    {
+        const { name, value } = event.target;
+        setInputField( { ...inputFileds, [ name ]: value } );
+    };
+
     return (
         <div className="sigUpContainer">
             <h2>Don't have an account</h2>
