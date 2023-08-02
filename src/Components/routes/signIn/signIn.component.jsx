@@ -15,6 +15,12 @@ const SignIn = () =>
     const { email, password } = inputFields;
     console.log( inputFields );
 
+    const handleChange = ( event ) =>
+    {
+        const { name, value } = event.target;
+        setInputField( { ...inputFields, [ name ]: value } );
+    }
+
     const logGoogleUser = async () =>
     {
         const { user } = await signInWithGooglePopup();
@@ -26,11 +32,11 @@ const SignIn = () =>
             <h2>Already have an account? Sign In</h2>
 
             <form onSubmit={()=>{}}>
-               
-                    
+                                
                     <label>Email</label>
                     <input type="email"
                     required
+                    onChange={handleChange}
                     name="email"
                     value={ email }/>
                 <label>
@@ -38,11 +44,12 @@ const SignIn = () =>
                 </label>
                     <input type="password"
                     required
+                    onChange={handleChange}
                     name="password"
                 value={ password }/>
 
                 <div className="buttons-container">
-                    
+                    <button type="submit">Sign In</button>
                 </div>
             </form>
         </div>
