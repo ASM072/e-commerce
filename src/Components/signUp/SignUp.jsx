@@ -2,7 +2,7 @@ import FormInput from "../formInput/formInput";
 import { useState } from "react";
 import { authUserWithEmailAndPassword } from "../../utility/firebase/firebase.utility";
 import './signUp.scss';
-
+import Button from "../buttons/button";
 
 const SignUp = () =>
 {
@@ -91,7 +91,7 @@ const SignUp = () =>
                     name="confirmPassword"
                     value={ confirmPassword }
                 />
-                <button type="submit">Sign Up</button>
+                <Button type="submit">SIGN UP</Button>
             </form>
         </div>
     );
