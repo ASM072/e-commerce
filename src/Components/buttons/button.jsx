@@ -1,12 +1,14 @@
-const ButtonType = {
-    google: 'googleSignIm',
+import './button.scss';
+
+export const BUTTONTYPE = {
+    google: 'googleSignIn',
     inverted: 'inverted'
 }
 
 const Button = ({children, buttonType, ...otherProps}) =>
 {
     return (
-        <button className={`buttonContainer ${ButtonType[buttonType]}`}>
+        <button className={ `buttonContainer ${ BUTTONTYPE[buttonType]}`}>
             {children}
       </button>
         

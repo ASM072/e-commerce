@@ -1,0 +1,44 @@
+.buttonContainer {
+    min-width: 150px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: rgba(0, 128, 128, 1) 100%;
+    color: white;
+    font-weight: bold; 
+    border: darkgreen;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        background-color: white;
+        color: rgba(0, 128, 128, 1) 100%;;
+        border: 1px solid black;
+    }
+
+    &.googleSignIn {
+        background-color: #4285f4;
+        color: white;
+
+        &:hover {
+            background-color: #357ae8;
+            border: none;
+        }
+    }
+
+    &.inverted {
+        background-color: white;
+        color: rgba(0, 128, 128, 1) 100%;
+        border: 1px solid black;
+
+        &:hover {
+            background-color:  rgba(0, 128, 128, 1) 100%;;
+            color: white;
+            border: none;
+        }
+    }
+}

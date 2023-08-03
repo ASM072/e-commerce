@@ -4,6 +4,7 @@ import { authUserWithEmailAndPassword, userSignIn, signInWithEmailandPassword } 
 import { useState } from "react";
 import FormInput from "../formInput/formInput";
 import SignUp from "../signUp/SignUp";
+import Button from "../buttons/button";
 
 const SignIn = () =>
 {
@@ -71,7 +72,8 @@ const SignIn = () =>
                     value={ password }/>
 
                 <div className="buttons-container">
-                    <button type="submit">Sign In</button>
+                    <Button type="submit">SIGN IN</Button>
+                    <Button buttonType='google' onClick={signInWithGooglePopup}>GOOGLE SIGN IN</Button>
                 </div>
             </form>
         </div>
