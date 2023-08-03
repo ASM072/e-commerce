@@ -1,21 +1,22 @@
 // eslint-disable-next-line
 import { auth, signInWithGooglePopup, userDocFromAuth } from "../../utility/firebase/firebase.utility";  
 import { authUserWithEmailAndPassword, userSignIn, signInWithEmailandPassword } from "../../utility/firebase/firebase.utility";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import FormInput from "../formInput/formInput";
-import SignUp from "../signUp/SignUp";
 import Button from "../buttons/button";
+import { UserContext } from "../../context/user";
+
+
+const defaultInputField = {
+    email: "",
+    password: "",
+};
 
 const SignIn = () =>
 {
-    const defaultInputField = {
-        email: "",
-        password: "",
-    };
-
     const [ inputFields, setInputField ] = useState( defaultInputField );
     const { email, password } = inputFields;
-    console.log( inputFields );
+    const { setCurrentUser } = useContext( UserContext );
 
     const handleChange = ( event ) =>
     {
@@ -34,8 +35,8 @@ const SignIn = () =>
         try
         {
             const { user } = await userSignIn( email, password );
+            setCurrentUser( user ); 
             resetInputFields();
-            console.log( user );
             alert( "Success!" );
         } catch ( error )
         {
