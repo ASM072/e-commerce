@@ -1,8 +1,9 @@
 import FormInput from "../formInput/formInput";
-import { useState } from "react";
-import { authUserWithEmailAndPassword } from "../../utility/firebase/firebase.utility";
+import { useState, useContext } from "react";
+import { createAuthUserWithEmailAndPassword, userDocFromAuth } from "../../utility/firebase/firebase.utility";
 import './signUp.scss';
 import Button from "../buttons/button";
+import UserContext from "../../context/user";
 
 const SignUp = () =>
 {
@@ -16,7 +17,7 @@ const SignUp = () =>
     const [ inputFileds, setInputField ] = useState( defaultInputField );
     const { displayName, email, password, confirmPassword } = inputFileds;
 
-    console.log( inputFileds );
+    const { setCurrentUser } = useContext( UserContext );
 
     const resetInputFields = () =>
     {
@@ -32,19 +33,20 @@ const SignUp = () =>
     const submitHandler = async ( event ) =>
     {
         event.preventDefault();
-        if ( password !== confirmPassword )
-        {
+        if ( password !== confirmPassword ){
             alert( "Passwords do not match" );
             return;
         }
         try
         {
-            const { user } = await authUserWithEmailAndPassword(
+            const { user } = await createAuthUserWithEmailAndPassword(
                 email,
                 password
             );
+            
+            setCurrentUser( user );
 
-            await authUserWithEmailAndPassword( user, { displayName } );
+            await userDocFromAuth( user, { displayName } );
             resetInputFields();
             console.log( user );
         } catch ( error )

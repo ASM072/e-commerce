@@ -1,6 +1,6 @@
 // eslint-disable-next-line
-import { auth, signInWithGooglePopup, userDocFromAuth } from "../../utility/firebase/firebase.utility";  
-import { authUserWithEmailAndPassword, userSignIn, signInWithEmailandPassword } from "../../utility/firebase/firebase.utility";
+import { signInWithGooglePopup, userDocFromAuth } from "../../utility/firebase/firebase.utility";  
+import { userSignIn, signInWithEmailandPassword } from "../../utility/firebase/firebase.utility";
 import { useState, useContext } from "react";
 import FormInput from "../formInput/formInput";
 import Button from "../buttons/button";

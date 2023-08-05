@@ -1,7 +1,14 @@
 // eslint-disable-next-line
 
 import { initializeApp } from 'firebase/app';
-import{ getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import{ 
+    getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+} from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -55,13 +62,16 @@ export const userDocFromAuth = async ( userAuth ) =>
 };
 
 
-export const authUserWithEmailAndPassword = async ( email, password ) =>
+export const createAuthUserWithEmailAndPassword = async ( email, password ) =>
 {
     if ( !email || !password ) return;
-    return await authUserWithEmailAndPassword( auth, email, password );
+
+    return await createUserWithEmailAndPassword( auth, email, password );
 };
 export const userSignIn = async ( email, password ) =>
 {
     if ( !email || !password ) return;
-    return await userSignIn( auth, email, password );
+    return await signInWithEmailAndPassword( auth, email, password );
 }
+
+export const userSignOut = async () => await signOut( auth );
