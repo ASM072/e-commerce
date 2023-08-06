@@ -4,7 +4,7 @@ import Button from '../buttons/button';
 const ProductCard = ({product}) =>
 {
     const { name, price, imageUrl } = product;
-    return (<div className='producCardContainer'>
+    return (<div className='productCardContainer'>
         <img src={imageUrl} alt={`${name}`}></img>
         <div className='footer'>
             <span className='name'></span>
