@@ -62,6 +62,7 @@ const SignUp = () =>
                     type="text"
                     required
                     name="displayName"
+                    autoComplete='on'
                     onChange={ changeHandler }
                     value={ displayName }
                 />
@@ -69,6 +70,7 @@ const SignUp = () =>
                     label="Email"
                     type="email"
                     required
+                    autoComplete='on'
                     onChange={ changeHandler }
                     name="email"
                     value={ email }
@@ -77,6 +79,7 @@ const SignUp = () =>
                     label="Password"
                     type="password"
                     required
+                    autoComplete='on'
                     onChange={ changeHandler }
                     name="password"
                     value={ password }
@@ -85,6 +88,7 @@ const SignUp = () =>
                     label="Confirm Password"
                     type="password"
                     required
+                    autoComplete='on'
                     onChange={ changeHandler }
                     name="confirmPassword"
                     value={ confirmPassword }

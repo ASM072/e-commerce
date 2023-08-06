@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { signInWithGooglePopup, userDocFromAuth } from "../../utility/firebase/firebase.utility";  
 import { userSignIn, signInWithEmailandPassword } from "../../utility/firebase/firebase.utility";
-import { useState } from "react"; eve
+import { useState } from "react"; 
 import FormInput from "../formInput/formInput";
 import Button from "../buttons/button";
 
@@ -42,8 +42,7 @@ const SignIn = () =>
     }
     const logGoogleUser = async () =>
     {
-        const { user } = await signInWithGooglePopup();
-        const userDocRef = await userDocFromAuth( user );
+        await signInWithGooglePopup();
     };
 
     return (
@@ -71,7 +70,7 @@ const SignIn = () =>
 
                 <div className="buttons-container">
                     <Button type="submit">SIGN IN</Button>
-                    <Button buttonType='google' onClick={signInWithGooglePopup}>GOOGLE SIGN IN</Button>
+                    <Button buttonType='google' onClick={logGoogleUser}>GOOGLE SIGN IN</Button>
                 </div>
             </form>
         </div>
