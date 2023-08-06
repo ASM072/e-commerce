@@ -4,27 +4,30 @@ import { ReactComponent as Logo } from "../../../assets/logo1.svg";
 import './navigation.style.scss'
 import UserContext from "../../../context/user";
 import { userSignOut } from "../../../utility/firebase/firebase.utility";
+import CartIcon from '../../carticon/carticon';
 
 const Navigation = () =>
 {
     const { currentUser } = useContext( UserContext );
 
-    return ( 
+    return (
         <Fragment>
             <div className="navigation">
                 <Link className="logoBox" to="/">
-                    <Logo />
+                    <Logo className="logo"/>
                 </Link>
-                <Link className="shoplink" to="/shop">SHOP</Link>
-                <div className="signIN">
+
+                <div className="navigationlinkContainer">
+                    <Link className="navigationlinks" to="/shop">SHOP</Link>
                     {
                         currentUser ? (
-                            <span className="signOut-link" onClick={userSignOut}>Sign Out</span>
-                            ) : (<Link className="signIn-link" to="/authentication">
-                                SIGN IN
-                            </Link>
+                            <span className="navigationlinks" onClick={ userSignOut }>Sign Out</span>
+                        ) : ( <Link className="navigationlinks" to="/authentication">
+                            SIGN IN
+                        </Link>
                         )
                     }
+                    <CartIcon/>
                 </div>
             </div>
             <Outlet />

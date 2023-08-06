@@ -14,24 +14,15 @@
     padding-top: 10px;
     display: flex;
 }
-
-.signIn-link{
-        padding-right: 15px;
-        padding-bottom: 5px;
-        padding-top: 30px;
-        display: flex;
-}
-
-.signOut-link {
-    padding-right: 15px;
-    padding-bottom: 5px;
-    padding-top: 30px;
+.navigationlinkContainer{
+    width: 50%;
+    height: 100%;
     display: flex;
-}
+    align-items: center;
+    justify-content: flex-end;
 
-.shoplink {
-    padding-right: 15px;
-    padding-bottom: 5px;
-    padding-top: 30px;
-    display: flex;
+    .navigationlinks {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
 }
