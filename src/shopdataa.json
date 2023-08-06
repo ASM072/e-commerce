@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "EMPORIO ARMANI",
+    "imageUrl": "",
+    "price": 25
+  },
+  {
+    "id": 2,
+    "name": "TAG HEUER",
+    "imageUrl": "",
+    "price": 18
+  },
+  {
+    "id": 3,
+    "name": "TOMMY HILFIGER",
+    "imageUrl": "",
+    "price": 35
+  },
+  {
+    "id": 4,
+    "name": "AUGUST STEINER",
+    "imageUrl": "",
+    "price": 25
+  },
+  {
+    "id": 5,
+    "name": "TISSOT",
+    "imageUrl": "",
+    "price": 18
+  },
+  {
+    "id": 6,
+    "name": "FOSSIL",
+        "imageUrl": "",
+    
+    "price": 14
+  },
+  {
+    "id": 7,
+    "name": "HUGO BOSS",
+    "imageUrl": "",
+        "price": 18
+  },
+  {
+    "id": 8,
+    "name": "GUESS",
+    "imageUrl": "",
+        "price": 14
+  },
+  {
+    "id": 9,
+    "name": "BURBERRY",
+    "imageUrl": "",
+        "price": 16
+  }
+]

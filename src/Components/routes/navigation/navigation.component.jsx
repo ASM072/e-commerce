@@ -15,12 +15,13 @@ const Navigation = () =>
                 <Link className="logoBox" to="/">
                     <Logo />
                 </Link>
+                <Link className="shoplink" to="/shop">SHOP</Link>
                 <div className="signIN">
                     {
                         currentUser ? (
                             <span className="signOut-link" onClick={userSignOut}>Sign Out</span>
                             ) : (<Link className="signIn-link" to="/authentication">
-                                Sign In
+                                SIGN IN
                             </Link>
                         )
                     }
