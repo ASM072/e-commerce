@@ -46,7 +46,7 @@ const SignIn = () =>
     };
 
     return (
-        <div className="ob">
+        <div className="SignInContainer">
             {/* <SignUp/> */}
             <h2>Already have an account? Sign In</h2>
 
