@@ -3,10 +3,10 @@ import { createContext, useState, useEffect } from "react";
 
 const addCartItem = ( cartItems, productToAdd ) =>
 {
-    const existingCartItem = cartItems.find( ( cartItems ) => cartItems === productToAdd.id );
+    const existingCartItem = cartItems.find( ( cartItem ) => cartItem.id === productToAdd.id );
     if ( existingCartItem )
     {
-        return cartItems.map( ( cartItems ) => cartItems.id === productToAdd.id ? { ...cartItems, quantity: cartItems.quantity + 1 } : cartItems );
+        return cartItems.map( ( cartItem ) => cartItem.id === productToAdd.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem );
     }
     return [ ...cartItems, { ...productToAdd, quantity: 1 } ];
 }

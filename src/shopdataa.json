@@ -2,56 +2,55 @@
   {
     "id": 1,
     "name": "EMPORIO ARMANI",
-    "imageUrl": "",
+    "imageUrl": "https://i.ibb.co/g7Jz0cs/EABrands.jpg",
     "price": 25
   },
   {
     "id": 2,
     "name": "TAG HEUER",
-    "imageUrl": "",
+    "imageUrl": "https://i.ibb.co/W3zRf2G/THBrands.jpg",
     "price": 18
   },
   {
     "id": 3,
     "name": "TOMMY HILFIGER",
-    "imageUrl": "",
+    "imageUrl": "https://i.ibb.co/R4xKksH/Tommy-HBrands.jpg",
     "price": 35
   },
   {
     "id": 4,
     "name": "AUGUST STEINER",
-    "imageUrl": "",
+    "imageUrl": "https://i.ibb.co/SvVymmX/August-Steiner.jpg",
     "price": 25
   },
   {
     "id": 5,
     "name": "TISSOT",
-    "imageUrl": "",
+    "imageUrl": "https://i.ibb.co/dLLxdWv/Tissot-Brands.jpg",
     "price": 18
   },
   {
     "id": 6,
     "name": "FOSSIL",
-        "imageUrl": "",
-    
+    "imageUrl": "https://i.ibb.co/86sD2zF/Fossil-Brands.jpg",
     "price": 14
   },
   {
     "id": 7,
     "name": "HUGO BOSS",
-    "imageUrl": "",
-        "price": 18
+    "imageUrl": "https://i.ibb.co/5kHknmV/HBBrands.jpg",
+    "price": 18
   },
   {
     "id": 8,
     "name": "GUESS",
-    "imageUrl": "",
-        "price": 14
+    "imageUrl": "https://i.ibb.co/4p7JJxT/GuessMen.webp",
+    "price": 14
   },
   {
     "id": 9,
     "name": "BURBERRY",
-    "imageUrl": "",
+    "imageUrl": "https://i.ibb.co/qxtwXfB/Burberry-Men.jpg",
         "price": 16
   }
 ]

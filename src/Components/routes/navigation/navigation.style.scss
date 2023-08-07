@@ -1,5 +1,5 @@
 .navigation{
-    height: 70px;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -7,12 +7,12 @@
 }
 
 .logoBox{
-    height: 100%;
-    width: 70px;
+    height: 200px;
+    width: 150px;
     padding-right: 5px;
-    padding-bottom: 5px; 
-    padding-top: 10px;
-    display: flex;
+    //padding-bottom: 25px; 
+    justify-content: flex-start;
+    
 }
 .navigationlinkContainer{
     width: 50%;
@@ -23,6 +23,6 @@
 
     .navigationlinks {
             padding: 10px 15px;
-            cursor: pointer;
+             cursor: pointer;
         }
 }
