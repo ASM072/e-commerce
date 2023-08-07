@@ -8,13 +8,14 @@ const ProductCard = ({product}) =>
     const { addItemToCart } = useContext( CartContext );
     const { name, price, imageUrl } = product;
     const addProductsToCart = () => addItemToCart(product);
-    return (<div className='productCardContainer'>
+    return (
+        <div className='productCardContainer'>
         <img src={imageUrl} alt={`${name}`}></img>
         <div className='footer'>
             <span className='name'>{ name }</span>
             <span className='price'>{ price }</span>
         </div>
-        <Button buttonType='inverted' onclick={addProductsToCart} >Add To Cart</Button>
+        <Button buttonType='inverted' onClick={addProductsToCart} >Add To Cart</Button>
     </div>)
 }
 

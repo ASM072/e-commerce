@@ -16,7 +16,7 @@
 
     &:hover {
         background-color: white;
-        color: rgba(0, 128, 128, 1) 100%;;
+        color: black;
         border: 1px solid black;
     }
 
@@ -32,11 +32,11 @@
 
     &.inverted {
         background-color: white;
-        color: rgba(0, 128, 128, 1) 100%;
+        color: black;
         border: 1px solid black;
 
         &:hover {
-            background-color:  rgba(0, 128, 128, 1) 100%;;
+            background-color:  black;
             color: white;
             border: none;
         }

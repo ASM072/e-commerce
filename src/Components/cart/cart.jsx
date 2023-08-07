@@ -3,17 +3,25 @@ import './cart.scss';
 import CartItem from '../cartitem/cartitem';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cartcontext';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () =>
 {
-    const { cartItem } = useContext( CartContext );
+    const { cartItems } = useContext( CartContext );
+    const navigate = useNavigate();
+    
+    const goToCheckoutHandler = () =>
+    {
+        navigate('/checkout')
+    }
     return (
         <div className='cartDropDownContainer'>
             <div className='cartItems'>
-                {[].map(item => <CartItem key={item.id} cartItem={item}/>)}
+                { cartItems.map( ( cartItem ) => (
+                    <CartItem key={ cartItem.id } cartItem={ cartItem } /> ))}
             </div>
             <h1>cart is empty</h1>
-            <Button>Go To Checkout </Button>
+            <Button onClick={goToCheckoutHandler}> Go To Checkout </Button>
         </div>
     )
 }
