@@ -1,4 +1,4 @@
-import './cartitem.scss';
+import './cartitemstyle.jsx';
 
 const CartItem = ({cartItem}) =>
 {

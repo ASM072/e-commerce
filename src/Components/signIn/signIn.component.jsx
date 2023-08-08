@@ -3,7 +3,7 @@ import { signInWithGooglePopup, userDocFromAuth } from "../../utility/firebase/f
 import { userSignIn, signInWithEmailandPassword } from "../../utility/firebase/firebase.utility";
 import { useState } from "react"; 
 import FormInput from "../formInput/formInput";
-import Button from "../buttons/button";
+import Button, { BUTTONTYPE } from "../buttons/button";
 
 
 const defaultInputField = {
@@ -70,7 +70,7 @@ const SignIn = () =>
 
                 <div className="buttons-container">
                     <Button type="submit">SIGN IN</Button>
-                    <Button buttonType='google' onClick={logGoogleUser}>GOOGLE SIGN IN</Button>
+                    <Button buttonType={BUTTONTYPE.google} onClick={logGoogleUser}>GOOGLE SIGN IN</Button>
                 </div>
             </form>
         </div>

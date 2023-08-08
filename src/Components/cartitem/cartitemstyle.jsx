@@ -1,3 +1,6 @@
+import { styled } from "styled-components";
+import 
+
 .cartItemContainer {
     width: 100%;
     display: flex;
