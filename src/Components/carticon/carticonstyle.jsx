@@ -1,4 +1,4 @@
-import { styled } from "styled-component";
+import { styled } from 'styled-components';
 import { ReactComponent as CartIconSvg } from '../../assets/shopbag.svg';
 
 export const ShoppingIcon = styled( CartIconSvg )`
