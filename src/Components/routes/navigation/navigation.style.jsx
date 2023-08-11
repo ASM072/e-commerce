@@ -5,7 +5,7 @@ export const NavigationContainer = styled.div`
     height: 100px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 25px;
 `
 export const LogoContainer=styled( Link )`
@@ -28,3 +28,7 @@ export const NavLink = styled( Link )`
     cursor: pointer;
 `
 
+export const SearchBarContainer = styled.div`
+    align-items: center;
+    padding-top:30px;
+`

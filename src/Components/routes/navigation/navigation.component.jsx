@@ -1,17 +1,21 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { ReactComponent as Logo } from "../../../assets/logo1.svg";
-import { NavigationContainer, NavigationLinkContainer, NavLink, LogoContainer } from './navigation.style.jsx'
+import { NavigationContainer, NavigationLinkContainer, NavLink, LogoContainer, SearchBarContainer } from './navigation.style.jsx'
 import { UserContext } from "../../../context/user";
 import { userSignOut } from "../../../utility/firebase/firebase.utility";
 import CartIcon from '../../carticon/carticon';
 import Cart from "../../cart/cart";
 import { CartContext } from "../../../context/cartcontext";
+import SearchBar from "../../searchbar/searchbar";
+
 
 const Navigation = () =>
 {
     const { currentUser } = useContext( UserContext );
     const { openCart } = useContext( CartContext );
+    
+    
 
     return (
         <Fragment>
@@ -19,7 +23,9 @@ const Navigation = () =>
                 <LogoContainer to="/">
                     <Logo className="logo"/>
                 </LogoContainer>
-
+                <SearchBarContainer>
+                <SearchBar />
+                </SearchBarContainer>
                 <NavigationLinkContainer>
                     <NavLink to="/shop">SHOP</NavLink>
                     {

@@ -1,9 +1,12 @@
-import {HomePageBodyContainer, HomePageItemContainer, BackgroundImage} from './homepageitemstyle.jsx'
+import { HomePageBodyContainer, HomePageItemContainer, BackgroundImage } from './homepageitemstyle.jsx'
+import { useNavigate } from 'react-router-dom';
 
 const HomePageItem = ( { category } ) => {
-    const { imageUrl, title } = category;
+    const { imageUrl, title, route } = category;
+    const navigate = useNavigate();
+    const onNavigateHandler = () => navigate( route );
     return (
-        <HomePageItemContainer>
+        <HomePageItemContainer onClick={onNavigateHandler}>
             <BackgroundImage imageUrl={imageUrl} />
             <HomePageBodyContainer>
                 <h2>{ title }</h2>
