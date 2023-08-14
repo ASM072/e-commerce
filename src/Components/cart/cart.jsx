@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Cart = () =>
 {
-    const { cartItems } = useContext( CartContext );
+    const { cI } = useContext( CartContext );
     const navigate = useNavigate();
     
     const goToCheckoutHandler = () =>
@@ -17,7 +17,7 @@ const Cart = () =>
     return (
         <CartDropDownContainer>
             <CartItems>
-                { cartItems.length ? (cartItems.map( ( cartItem ) => (
+                { cI.length ? (cI.map( ( cartItem ) => (
                     <CartItem key={ cartItem.id } cartItem={ cartItem } /> ) ) ) : (
                         <EmptyMessage>
                             Your Cart is Empty!

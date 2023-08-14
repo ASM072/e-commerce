@@ -11,8 +11,8 @@ const Home = () =>
         <div>
             <Directory />
             <Outlet />
+            <Footer/>
             <div>
-                <Footer/>
             </div>
         </div>
     );

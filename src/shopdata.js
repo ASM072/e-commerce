@@ -59,7 +59,7 @@ const ShopData = [
     ],
   },
   {
-    title: "Men",
+    title: "",
     items: [
       {
         id: 10,
@@ -122,7 +122,7 @@ const ShopData = [
       },
       {
         id: 19,
-        name: "",
+        name: "DEF",
         imageUrl: "https://i.ibb.co/X7v4ppB/Women2.webp",
         price:20,
       },
@@ -199,7 +199,7 @@ const ShopData = [
       {
         id: 30,
         name: "",
-        imageUrl: "https://i.ibb.co/6DMwgWS/Accesories8.webp",
+        imageUrl: "",
         price:20,
       },
       {

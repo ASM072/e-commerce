@@ -24,9 +24,10 @@ const Navigation = () =>
                     <Logo className="logo"/>
                 </LogoContainer>
                 <SearchBarContainer>
-                <SearchBar />
+                <SearchBar/>
                 </SearchBarContainer>
                 <NavigationLinkContainer>
+                    <NavLink to="/aboutus"> About Us</NavLink>
                     <NavLink to="/shop">SHOP</NavLink>
                     {
                         currentUser ? (

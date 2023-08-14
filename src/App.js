@@ -4,7 +4,7 @@ import Navigation from "./Components/routes/navigation/navigation.component";
 import Authentication from "./Components/routes/authentication/authentication";
 import Shop from "./Components/routes/shop/shop";
 import Checkout from "./Components/routes/checkout/checkout";
-import Footer from "./Components/footer/footer";
+import AboutUs from "./Components/aboutus/aboutus";
 
 const App = () =>
 {
@@ -15,6 +15,7 @@ const App = () =>
         <Route path="shop/*" element={ <Shop/> } />
         <Route path="authentication" element={ <Authentication /> } />
         <Route path="checkout" element={ <Checkout /> } />
+        <Route path="aboutus" element={ <AboutUs /> } />
         {/* <Route path="footer" element={ <Footer /> } /> */}
       </Route>
     </Routes>
