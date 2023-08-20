@@ -11,9 +11,6 @@ import{
     onAuthStateChanged
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from 'firebase/firestore';
-import ProductCard from '../../Components/productcard/productcard';
-import { useState, useEffect } from 'react';
-import SearchBar from '../../Components/searchbar/searchbar';
 
 const firebaseConfig = {
     apiKey: "AIzaSyC0VdbGHlxjHXBALe1imkrFl40e8SzkGiM",
@@ -48,7 +45,7 @@ export const addCollection = async ( collectionKey, objects ) =>
     await batch.commit();
 }
 
-export const getCategories = async () =>
+export const getCategories = async ( searchTerm = '' ) =>
 {
     const collectionReference = collection( db, 'categories' );
     const q = query( collectionReference );
@@ -57,6 +54,15 @@ export const getCategories = async () =>
     const categoriesMap = querySnapShot.docs.reduce( ( accumulator, docSnapshot ) =>
     {
         const { title, items } = docSnapshot.data();
+
+        let filteredItems = items;
+        if ( searchTerm )
+        {
+            filteredItems = items.filter( item =>
+                item.name.toLowerCase().includes( searchTerm.toLowerCase() )
+            );
+        }
+
         accumulator[ title.toLowerCase() ] = items;
         return accumulator;
     }, {} );
@@ -92,42 +98,6 @@ export const userDocFromAuth = async ( userAuth, additionalInformation={} ) =>
     return userDocRef;
 };
 
-
-export const SearchBarGetItems = () =>
-{
-    const [ products, setProducts ] = useState( [] );
-    const [ filteredProducts, setFilteredProducts ] = useState( [] );
-
-    useEffect( () =>
-    {
-        const fetchData = async () =>
-        {
-            const db = firebaseApp.database();
-            const productsRef = db.ref( 'products' );
-            const snapshot = await productsRef.once( 'value' );
-            const data = snapshot.val();
-            if ( data )
-            {
-                setProducts( Object.values( data ) );
-            }
-        };
-        fetchData();
-    }, [] );
-
-    const handleSearch = ( query ) =>
-    {
-        const filtered = products.filter( ( product ) =>
-            product.name.toLowerCase().includes( query.toLowerCase() )
-        );
-        setFilteredProducts( filtered );
-    };
-
-    return (
-
-            <ProductCard products={ filteredProducts } />
-        
-    );
-}
 
 
 export const createAuthUserWithEmailAndPassword = async ( email, password ) =>

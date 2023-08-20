@@ -1,3 +1,4 @@
+
 .search-bar {
     padding-top: 15px;
     margin: 2rem 0;
@@ -20,3 +21,19 @@
     border-color: #007bff;
     box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
 }
+
+.product-list{
+    width: 240px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    :hover{
+        background-color: white;
+    }
+
+}
+
