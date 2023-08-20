@@ -14,8 +14,6 @@ const Navigation = () =>
 {
     const { currentUser } = useContext( UserContext );
     const { openCart } = useContext( CartContext );
-    
-    
 
     return (
         <Fragment>

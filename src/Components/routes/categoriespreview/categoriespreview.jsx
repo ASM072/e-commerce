@@ -1,7 +1,7 @@
 import { Fragment, useContext } from "react"
 import { ProductContext } from "../../../context/product"
 import './categoriespreview.scss';
-import CategoryPreviews from "../../categorypreview/categorypreviews";
+import CategoryPreviews from "../../categorypreviews/categorypreviews";
 
 const CategoriesPreview = () =>
 {

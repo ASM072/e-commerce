@@ -90,29 +90,4 @@ const SearchBar = () =>
     );
 };
 
-
-
-    
-    //     return (
-    //         <div>
-    //             <div className="search-bar">
-    //                 <input
-    //                     type="text"
-    //                     placeholder="Search products..."
-    //                     value={ searchTerm }
-    //                     onChange={ e => setSearchTerm( e.target.value ) }
-    //                         onFocus = { handleFocus }
-    //                         onBlur={handleBlur}
-    //                 />
-    //                 <button onClick={ handleSearch }>Search</button>
-                    
-    //                 <div className="product-list">
-    //                     { filteredProducts.map( product => (
-    //                         <ProductCard key={ product.id } product={ product } />
-    //                     ) ) }
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // }
 export default SearchBar;
