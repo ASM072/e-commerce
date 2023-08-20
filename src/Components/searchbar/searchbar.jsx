@@ -80,7 +80,7 @@ const SearchBar = () =>
             <button onClick={ handleSearch }>Search</button>
            
             { showResults && (
-                <div className="product-list dropdown" ref={ resultsRef }>
+                <div className="product-list" ref={ resultsRef }>
                     { filteredProducts.map( product => (
                         <ProductCard key={ product.id } product={ product } />
                     ) ) }

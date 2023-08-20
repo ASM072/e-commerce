@@ -23,6 +23,7 @@
 }
 
 .product-list{
+    position: absolute;
     width: 240px;
     height: 340px;
     display: flex;
@@ -31,6 +32,8 @@
     padding: 20px;
     border: 1px solid black;
     background-color: white;
+    overflow-y: auto;
+    z-index: 2;
     :hover{
         background-color: white;
     }
