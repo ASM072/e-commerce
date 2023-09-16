@@ -1,5 +1,5 @@
 import HomePageItem from '../homepageitem/homepageitem';
-import './directory.style.scss'
+import { DirectoryContainer } from './directory.style';
 
 const categories = [
     {
@@ -38,11 +38,11 @@ const Directory = ( ) =>
 {
     
     return (
-        <div className="directoryContainer">
+        <DirectoryContainer className="directoryContainer">
             { categories.map( ( category ) => (
                 <HomePageItem key={ category.id } category={ category } />
             ) ) }
-        </div>
+        </DirectoryContainer>
     )
 }
 
