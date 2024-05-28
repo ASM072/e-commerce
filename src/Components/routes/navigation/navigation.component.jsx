@@ -2,17 +2,18 @@ import { Outlet } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { ReactComponent as Logo } from "../../../assets/logo1.svg";
 import { NavigationContainer, NavigationLinkContainer, NavLink, LogoContainer, SearchBarContainer } from './navigation.style.jsx'
-import { UserContext } from "../../../context/user";
 import { userSignOut } from "../../../utility/firebase/firebase.utility";
 import CartIcon from '../../carticon/carticon';
 import Cart from "../../cart/cart";
 import { CartContext } from "../../../context/cartcontext";
 import SearchBar from "../../searchbar/searchbar";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../../store/user/user-selector.js";
 
 
 const Navigation = () =>
 {
-    const { currentUser } = useContext( UserContext );
+    const currentUser = useSelector( selectCurrentUser );
     const { openCart } = useContext( CartContext );
 
     return (

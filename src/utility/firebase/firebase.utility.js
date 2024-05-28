@@ -32,6 +32,7 @@ provider.setCustomParameters( {
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup( auth, provider );
 
+
 export const db = getFirestore();
 
 export const addCollection = async ( collectionKey, objects ) =>
@@ -43,6 +44,7 @@ export const addCollection = async ( collectionKey, objects ) =>
         batch.set( docRef, element );
     } );
     await batch.commit();
+    console.log( 'done' );
 }
 
 export const getCategories = async ( searchTerm = '' ) =>
@@ -51,22 +53,24 @@ export const getCategories = async ( searchTerm = '' ) =>
     const q = query( collectionReference );
 
     const querySnapShot = await getDocs( q );
-    const categoriesMap = querySnapShot.docs.reduce( ( accumulator, docSnapshot ) =>
-    {
-        const { title, items } = docSnapshot.data();
+    return querySnapShot.docs.map( docSnapshot => docSnapshot.data() );
+        
+    //     reduce( ( accumulator, docSnapshot ) =>
+    // {
+    //     const { title, items } = docSnapshot.data();
 
-        let filteredItems = items;
-        if ( searchTerm )
-        {
-            filteredItems = items.filter( item =>
-                item.name.toLowerCase().includes( searchTerm.toLowerCase() )
-            );
-        }
+    //     let filteredItems = items;
+    //     if ( searchTerm )
+    //     {
+    //         filteredItems = items.filter( item =>
+    //             item.name.toLowerCase().includes( searchTerm.toLowerCase() )
+    //         );
+    //     }
 
-        accumulator[ title.toLowerCase() ] = items;
-        return accumulator;
-    }, {} );
-    return categoriesMap;
+    //     accumulator[ title.toLowerCase() ] = items;
+    //     return accumulator;
+    // }, {} );
+    // return categoriesMap;
 }
 
 export const userDocFromAuth = async ( userAuth, additionalInformation={} ) =>

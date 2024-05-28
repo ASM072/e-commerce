@@ -77,8 +77,6 @@ const SearchBar = () =>
                 onFocus={ handleFocus }
                 onBlur={ handleBlur }
             />
-            <button onClick={ handleSearch }>Search</button>
-           
             { showResults && (
                 <div className="product-list" ref={ resultsRef }>
                     { filteredProducts.map( product => (
@@ -86,6 +84,8 @@ const SearchBar = () =>
                     ) ) }
                 </div>
             ) }
+            <br></br>
+            <button onClick={ handleSearch }>Search</button>
         </div>
     );
 };
